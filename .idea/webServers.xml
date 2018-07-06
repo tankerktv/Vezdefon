@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="bef1e3b4-5a89-449f-abd1-af4f9caa0b7f" name="vezdefon.pro" url="http://cyberix.online">
-        <fileTransfer host="cyberix.online" port="21">
+      <webServer id="bef1e3b4-5a89-449f-abd1-af4f9caa0b7f" name="vezdefon.pro" url="http://vezdefon.pro">
+        <fileTransfer host="78.139.196.149" port="21" rootFolder="/WebServer/vezdefon">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

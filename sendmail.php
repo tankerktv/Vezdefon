@@ -1,6 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: tankerktv
+ * Date: 13.06.2018
+ * Time: 17:17
+ */
+
+
+$email      = @trim(stripslashes($_POST['email']));
+$name       = @trim(stripslashes($_POST['name']));
+$message    = 'Имя отправителя: '.$name."\r\n".'Сообщение: '.@trim(stripslashes($_POST['message']))."\r\n".'E-Mail отправителя: '.$email;
+$to      = 'vezdefon@3dkv.ru';
+$subject = 'Запрос с сайта vezdefon.pro';
+$headers = 'From: Вездефон <robot@vezdefon.pro>' . "\r\n" .
+    'Reply-To: '.$email. "\r\n" .
+    'X-Mailer: PHP/' . phpversion();;
+
+mail($to, $subject, $message, $headers);
+
+?>
+
 <!DOCTYPE HTML>
 <!--
-	Spectral by HTML5 UP
+Spectral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -15,17 +37,17 @@
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121313956-1"></script>
-		<script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121313956-1"></script>
+        <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'UA-121313956-1');
-		</script>
-		<!-- Yandex.Metrika counter -->
-		<script type="text/javascript" >
+        </script>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
             (function (d, w, c) {
                 (w[c] = w[c] || []).push(function() {
                     try {
@@ -49,9 +71,9 @@
                     d.addEventListener("DOMContentLoaded", f, false);
                 } else { f(); }
             })(document, window, "yandex_metrika_callbacks2");
-		</script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/49487572" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-		<!-- /Yandex.Metrika counter -->
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/49487572" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
 	</head>
 	<body>
 
@@ -86,37 +108,14 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Форма обратной связи</h2>
+							<h2>Ваше сообщение успешно отправлено на нашу корпоративную почту!</h2>
 						</header>
-						<section class="wrapper style5">
-							<div class="inner">
-								<form method="post" action="sendmail.php">
-									<div class="row uniform">
-										<div class="6u 12u$(xsmall)">
-											<input type="text" name="name" id="name" value="" placeholder="Имя" required/>
-										</div>
-										<div class="6u$ 12u$(xsmall)">
-											<input type="email" name="email" id="email" value="" placeholder="E-Mail" required/>
-										</div>
-										<div class="12u$">
-											<textarea name="message" id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
-										</div>
-										<div class="12u$">
-											<ul class="actions">
-												<li><input type="submit" value="Отправить" class="special" /></li>
-												<li><input type="reset" value="Очистить" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</div>
-						</section>
 					</article>
 
 				<!-- Footer -->
 				<footer id="footer">
 					<ul class="copyright">
-						<li>&copy; 2017</li><li><a href="http://preactum.ru">Преактум</a> </li><li><a href="http://tpu.ru">ТПУ</a> </li>
+						<li>&copy; 2017-2018</li><li><a href="http://preactum.ru">Преактум</a> </li><li><a href="http://tpu.ru">ТПУ</a> </li>
 					</ul>
 				</footer>
 
